@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>5KBR</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./css/material.min.blue.cyan.css">
+        <script src="./bower_components/material-design-lite/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!--<script src="./js/jquery.js"></script>-->
+        <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+        <link rel="stylesheet" type="text/css" href="css/animations.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<!-- START HEADER -->
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">5KEYBOARD</span>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">
+    Select tutorial:
+    </span>
+    <table class="mdl-data-table mdl-js-data-table" style="width:100%;">
+      <tr><td style="text-align:left;padding-left:50px;">
+      <label class="mdl-radio mdl-js-radio" for="option-intro">
+      <input type="radio" id="option-intro" class="mdl-radio__button" name="view" value="intro" checked>
+      <span class="mdl-radio__label">Introduction</span>
+    </label>
+    </td></tr>
+      <tr><td style="text-align:left;padding-left:50px;">
+    <label class="mdl-radio mdl-js-radio" for="option-alphabet">
+      <input type="radio" id="option-alphabet" class="mdl-radio__button" name="view" value="alphabet">
+      <span class="mdl-radio__label">Alphabet</span>
+    </label>
+    </td></tr>
+    </td></tr>
+      <tr><td style="text-align:left;padding-left:50px;">
+    <label class="mdl-radio mdl-js-radio" for="option-freestyle">
+      <input type="radio" id="option-freestyle" class="mdl-radio__button" name="view" value="freestyle">
+      <span class="mdl-radio__label">Freestyle</span>
+    </label>
+    </td></tr>
+    </table>
+    <div id="output-box"></div>
+  </div>
+<!-- END HEADER START MAIN -->
+<main class="mdl-layout__content main">
+    <div id="msg-box"></div>
+    <div id="phrase-box"><div id="phrase"></div></div>
+      <div id="bmap-text"></div>
+    <div id="hint-box">
+      <div id="hint-text"></div>
+      <figure class="mdl-button mdl-js-button"></figure>
+      <figure class="mdl-button mdl-js-button"></figure>
+      <figure class="mdl-button mdl-js-button"></figure>
+      <figure class="mdl-button mdl-js-button"></figure>
+      <figure class="mdl-button mdl-js-button thumb-button"></figure>
+    </div>
+    <div id="controls-hint">
+      <label class="mdl-switch mdl-js-switch" for="switch-toggleHints">
+        <span class="mdl-switch__label">hints</span>
+        <input type="checkbox" id="switch-toggleHints" class="mdl-switch__input" checked>
+      </label>
+      <label class="mdl-switch mdl-js-switch" for="switch-toggleAlphabet">
+        <span class="mdl-switch__label">keys</span>
+        <input type="checkbox" id="switch-toggleAlphabet" class="mdl-switch__input" checked>
+      </label>
+      <label><a href="javascript:void(0)" onClick="game.showGuide()">alphabet <i class="material-icons">open_in_new</i></a></label>
+    </div>
+</main>
+<!-- END MAIN -->
+<div class="game-completed" style="display: none;">
+
+<h1>Thanks for checking out 5kbr. </h1>
+<a href="javascript:window.location.reload(true)">Click here to reload the site.</a>
+<h3>Keep in touch</h3>
+<ul>
+<li>Newsletter</li>
+<li>Kickstarter</li>
+<li>Twitter</li>
+<li>Facebook</li>
+</ul>
+</div>
+</div>
+<!-- END MDL LAYOUT -->
+
+<script src="js/rabbit.js"></script>
+<script src="js/fireworks.js"></script>
+<script src="js/kbr.js"></script>
+<script src="js/game.js"></script>
+<script src="js/keymap-merged.js"></script>
+
+<script type="text/javascript">
+function ready(){
+  var kbrObj = kbr.ready(keymap_1, game.subscribe);
+  game.start(kbrObj);
+}
+
+  if (window.addEventListener){
+    window.addEventListener("load", ready, false);
+  }else if(window.attachEvent){
+      window.attachEvent("onload", ready);
+  }
+
+
+</script>
+
+</body>
+</html>    
